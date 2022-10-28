@@ -1,21 +1,21 @@
 @extends('layouts.layout')
 @section('abacaxi')
-  <div class="d-flex justify-content-center gap-2"><h1>Visualização Do Cardápio</h1></div>
-  <b>Nome:</b> Cardápio Principal
-  <p>Criado em: 14/06/2022</p>
-  <p>Cardápio Ativo? sim</p>
-  <div class="d-flex justify-content-center gap-2"><p>Ativar/Desativar</p><div class="form-check form-switch">
+  <div class="d-flex justify-content-center gap-2 text-white"><h1>Visualização Do Cardápio</h1></div>
+  <div class="d-flex justify-content-center gap-2 text-white"><b>Nome:</b> Cardápio Principal</div>
+  <div class="d-flex justify-content-center gap-2 text-white"><p>Criado em: 14/06/2022</p></div>
+  <div class="d-flex justify-content-center gap-2 text-white"><p>Cardápio Ativo? sim</p></div>
+  <div class="d-flex justify-content-center gap-2  text-white"><p>Ativar/Desativar</p><div class="form-check form-switch">
   <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
   <label class="form-check-label" for="flexSwitchCheckChecked"></label></div>
-  <div class="d-inline-flex gap-2">
+  <div class="d-inline-flex gap-2 text-white">
   <div><label for="exampleName" class="form-label">Add Produtos:</label></div>
   <div><input type="Name" class="form-control" id="exampleName"></div>
   <button class="btn btn-primary" type="submit">+</button></div>
   </div>
-  <table class="table">
+  <table class="table bg-light">
   <thead>
     <tr>
-      <th scope="col">Prouto (Título)</th>
+      <th scope="col">Produto (Título)</th>
       <th scope="col">Descrição</th>
       <th scope="col">Preço</th>
       <th scope="col">Disponibilidade</th>
@@ -23,21 +23,21 @@
   </thead>
   <tbody>
     <tr>
-      <td>Batata Frita </td>
-      <td>Porção de batata frita  (200g)</td>
-      <td>R$12.00</td>
+      <td> Café </td>
+      <td> Café com Leite </td>
+      <td>R$4.00</td>
       <td>Disponível</td>
     </tr>
     <tr>
-      <td>Espetinho de carne</td>
-      <td>Espetinho de carne porco(100g)</td>
-      <td>R$10.00</td>
+      <td> Misto Quente </td>
+      <td> Pão com Manteiga, queijo e Presunto </td>
+      <td>R$8.00</td>
       <td>Disponível</td>
     </tr>
     <tr>
-      <td>Pizza de frango</td>
-      <td>Pizza de frango queijo 12 pedaços</td>
-      <td>R$36.00</td>
+      <td> Pão com Ovo </td>
+      <td> Pão, Ovo e Queijo </td>
+      <td>R$6.00</td>
       <td>Disponível</td>
     </tr>
   </tbody>

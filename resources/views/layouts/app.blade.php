@@ -16,18 +16,18 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body style="background-image: url(https://images7.alphacoders.com/119/1191493.jpg) ">
     <div id="app">
-      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000">
-        <h1>Página Login</h1>
-        <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #000000">
+    <div class="d-flex w-100 " ><h1>Página de Login</h1></div>
+        <div class="container-fluid ">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent ">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
@@ -52,19 +52,16 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                              <a class="nav-link active" href="cardapio">Cardápios</a>
+                              <a class="nav-link active" href="{{route('menu.index')}}">Cardápios</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link active" href="produtos">Produtos</a>
+                              <a class="nav-link active" href="{{route('product.index')}}">Produtos</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link active" href="pedidos">Ver Pedido</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link active" href="funcionarios">Funcionários</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link active" href="cadastroempresa">Dados da Empresa</a>
+                              <a class="nav-link active" href="{{route('User.index')}}">Funcionários</a>
                             </li>
                           </ul>
                         </div>

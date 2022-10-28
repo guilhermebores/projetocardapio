@@ -13,23 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/Guilherme', function () {
-    return view('Guilherme');
-});
 Route::get('/cadastroempresa',function () {
     return view('cadastroempresa');
   });
 Route::get('/',function () {
-  return view('login');
+  return view('auth.login');
 });
-
-Route::get('/cadastroempresa','App\Http\Controllers\CadastroempresaController@helloworld');
-Route::get('/cardapio','App\Http\Controllers\CardapioController@helloworld');
-Route::get('/funcionarios','App\Http\Controllers\FuncionariosController@helloworld');
 Route::get('/pedidos','App\Http\Controllers\PedidosController@helloworld');
-Route::get('/produtos','App\Http\Controllers\ProdutosController@helloworld');
-Route::get('/verpedido','App\Http\Controllers\VerpedidoController@helloworld');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware('auth')->group(function() {
+
+  Route::resource('User', App\Http\Controllers\UserController::class);
+  Route::resource('product', App\Http\Controllers\ProductController::class);
+  Route::resource('menu', App\Http\Controllers\MenuController::class);
+  Route::resource('menu.product', App\Http\Controllers\MenuProductController::class)
+     ->only(['store', 'destroy']);
+  Route::get('/cardapio/{menu}', 'App\Http\Controllers\MenuController@showPublic')->name('menu.public.show');
+
+});

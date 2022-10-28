@@ -1,11 +1,11 @@
 @extends('layouts.layout')
 @section('abacaxi')
-  <div class="container-fluid"><h1>Pedidos</h1></div>
+  <div class="container-fluid text-white"><h1>Pedidos</h1></div>
   <div class="d-flex justify-content-start">
-  <div><label for="exampleFormControlInput1" class="form-label">Pedidos realizados no dia:</label></div>
+  <div><label for="exampleFormControlInput1" class="form-label text-white">Pedidos realizados no dia:</label></div>
   <div><input type="email" class="form-control" id="exampleFormControlInput1" placeholder="            /                /            "></div>
   </div>
-  <table class="table">
+  <table class="table bg-light">
   <thead>
     <tr>
       <th scope="col">N°^</th>
@@ -23,7 +23,7 @@
       <td>010</td>
       <td>Finalizado</td>
       <td>12/07/22</td>
-      <td> Pizza de frango com coca-cola</td>
+      <td> Misto Quente e Café </td>
       <td><a class="btn btn-warning" href="" role="button">👀</a></td>
       <td><a class="btn btn-primary" href="" role="button">✏️</a></td>
     </tr>
@@ -41,7 +41,7 @@
       <td>015</td>
       <td>Em andamento</td>
       <td>13/07/22</td>
-      <td>Fritas suco de uva 200ml</td>
+      <td> Pão com Ovo </td>
       <td><a class="btn btn-warning" href="" role="button">👀</a></td>
       <td><a class="btn btn-primary" href="" role="button">✏️</a></td>
     </tr>

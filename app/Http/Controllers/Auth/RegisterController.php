@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Establishment;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -50,9 +51,18 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+           'name' => ['required', 'string', 'max:255'],
+           'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+           'password' => ['required', 'string', 'min:8', 'confirmed'],
+           'cpf' =>['required', 'string', 'min:11', 'unique:users'],
+           'phone' =>['required', 'string', 'min:10'],
+           'type' =>['required', 'string', 'max:255'],
+           'address' =>['required', 'string', 'max:255'],
+           'cnpj' =>['required', 'string', 'min:14', 'unique:establishments'],
+           'trading_name' =>['required', 'string', 'max:255'],
+           'company_name' =>['required', 'string', 'max:255'],
+           'company_address' =>['required', 'string', 'max:255'],
+           'company_phone' =>['required', 'string', 'min:10'],
         ]);
     }
 
@@ -64,10 +74,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $establishment = Establishment::create([
+          'cnpj'=> $data['cnpj'],
+          'trading_name'=> $data['trading_name'],
+          'company_name'=> $data['company_name'],
+          'address'=> $data['company_address'],
+          'phone'=> $data['company_phone'],
+        ]);
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'cpf' => $data['cpf'],
+            'phone' => $data['phone'],
+            'type' => $data['type'],
             'password' => Hash::make($data['password']),
+            'address' => $data['address'],
+            'establishment_id' => $establishment->id,
         ]);
     }
 }
